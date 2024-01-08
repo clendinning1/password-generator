@@ -6,6 +6,8 @@ This week's Challenge requires you to modify starter code to create an applicati
 
 The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
 
+!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
 ## User Story
 
 ```
@@ -38,7 +40,7 @@ THEN the password is either displayed in an alert or written to the page
 
 The following image shows the web application's appearance and functionality:
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+![The Password Generator application displays a red button to "Generate Password".](./assets/images/03-javascript-homework-demo.png)
 
 ## Grading Requirements
 
