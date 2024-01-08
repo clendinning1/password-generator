@@ -8,6 +8,8 @@
 // 6. after all of the prompts are answered, generate a password that matches chosen criteria
 // 7. after the password generates, it either displays in an alert or written into the page
 
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -22,3 +24,18 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// when you click the "generate password" button, it opens the series of prompts
+
+
+// prompt 1: length. empty input box, enter length between 8-128.
+
+
+// prompt 2: checkboxes for character types: lowercase, uppercase, mumeric, and special
+
+
+// generate password based off of inputs
+
+
+// display password
