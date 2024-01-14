@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -23,7 +23,34 @@
                     aria-label="Generated Password"></textarea>
             </div>
             <div class="card-footer">
-                <button id="generate" class="btn">Generate Password</button>
+                <!--Generate Password button-->
+                <button id="generate" class="btn" onclick="">Generate Password</button>
+            </div>
+            <!--below is hidden before button press-->
+            <div id="prompts">
+                <!--prompts-->
+                <div class="length-section">
+                    <label for="length">Password length:</label>
+                    <input type="text" id="length" placeholder="enter a # between 8-128">
+                </div>
+                <br>
+                <div class="character-section">
+                    <txt>Includes...:</txt>
+                    <br>
+                    <!--Lowercase?-->
+                    <label for="lowercase">Lowercase:</label>
+                    <input type="checkbox" id="lowercase">
+                    <!--Uppercase?-->
+                    <label for="uppercase">Uppercase:</label>
+                    <input type="checkbox" id="uppercase">
+                    <br>
+                    <!--Numbers?-->
+                    <label for="numeric">Numbers:</label>
+                    <input type="checkbox" id="numeric">
+                    <!--Special characters?-->
+                    <label for="special">Special characters:</label>
+                    <input type="checkbox" id="special">
+                </div>
             </div>
         </div>
     </div>
