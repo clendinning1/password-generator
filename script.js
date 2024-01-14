@@ -9,21 +9,33 @@
 // 7. after the password generates, it either displays in an alert or written into the page
 
 
-
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
+// gB var is the #generate id in the html
 
-// Write password to the #password input
+function generatePassword() {
+    var promptsList = document.getElementById("prompts");
+    promptsList.style.display='block';
+}
+
 function writePassword() {
+    // creates a funct called writePassword
     var password = generatePassword();
+    // "password" runs the generatePassword funct
     var passwordText = document.querySelector("#password");
+    // "passwordText" is the #password location in the html
 
     passwordText.value = password;
+    // (the pT variable's value is changed to the "password" variable)
+    // the pT variable calls the funct generatePassword at #password in the html
+    //      aka, prints something in the "your secure password" box
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+// gB var will do something:
+// ("click" = when it's clicked)(wP = function that runs on the button click)
+
+
 
 
 // when you click the "generate password" button, it opens the series of prompts
