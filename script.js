@@ -1,17 +1,7 @@
 // TO DO
-// 1. gen button onclick, user is presented with a series of prompts for password criteria
-// 2. user selects which criteria to include in the password
-// criteria options:
-// 3. length - user chooses length between 8-128 characters
-// 4. character types - do(n't) include lowercase, uppercase, numeric, and/or special characters
 // 5. at each criteria prompt answer, the user input should be validated and at least one character type should be selected
 // 6. after all of the prompts are answered, generate a password that matches chosen criteria
 // 7. after the password generates, it either displays in an alert or written into the page
-
-
-// ok so we need the pieces that respond to you typing in info & checking boxes,
-// then we need the piece that actually generates the password based on what you
-// inputted.
 
 
 var generateBtn = document.querySelector("#generate");
@@ -53,15 +43,22 @@ function generateString(length) {
 }
 
 function generatePassword() {
-    // this is what runs the prompts and figures out the parameters
+    // this function runs the prompts and figures out the parameters
+
+    // prompts:
     findLength();
     findPrompts();
 
-    if (upperPrompt === true) {
+    // 
+    if (lowerPrompt === true) {
         console.log("please, god");
+    } else {
+        console.log("yippee!");
     }
 
+    // password!!:
     console.log(generateString(length));
+    // figure out how to put it in da box
 }
 
 function findLength() {
