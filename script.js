@@ -3,9 +3,9 @@
 // 6. after all of the prompts are answered, generate a password that matches chosen criteria
 
 
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 // links the button variable to its html location
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener('click', writePassword);
 // adds onclick functionality to the button;
 // when clicked, the button runs the writePassword function
 
@@ -14,27 +14,32 @@ var password
 function writePassword() {
     generatePassword();
     // runs the generatePassword funct
-    var passwordText = document.querySelector("#password");
+    var passwordText = document.querySelector('#password');
     // locates the text box in the html
 
     passwordText.value = password;
-    // prints the value of the "password" variable in the "your secure password" box
+    // prints the value of the 'password' variable in the 'your secure password' box
     // password = generatePassword(), so it will print the value of generatePassword(), i think??
 }
 
 // some varries :3
-var length
-var lowerPrompt
-var upperPrompt
-var numPrompt
-var specPrompt
+var length;
+var lowerPrompt;
+var upperPrompt;
+var numPrompt;
+var specPrompt;
+
+var ll;
+var upl;
+var nums;
+var spch;
 
 // function from Programiz
 function generateString(length) {
     // generates the password!
     const characters = lowerPrompt + upperPrompt + numPrompt + specPrompt;
     //if (lowerPrompt && upperPrompt && numPrompt && specPrompt === null) {
-        //confirm("Please select at least one character type.");
+        //confirm('Please select at least one character type.');
         //generatePassword();
     //}
     let result = ' ';
@@ -54,40 +59,14 @@ function generatePassword() {
 
     // determines settings for length & sends error msg at bad input:
     if (length >= 8 && length <= 128) {
+        confirm('Your password will be ' + length + ' characters long.')
     } else {
-        confirm("Please enter a valid number.");
+        confirm('Please enter a valid number.');
         return;
     }
 
-    // character type
+    // character type prompts & settings:
     findPrompts();
-
-    // if () determines the variable settings
-    if (lowerPrompt === true) {
-        lowerPrompt = 'abcdefghijklmnopqrstuvwxyz';
-    } else {
-        lowerPrompt = null;
-    }
-    
-    if (upperPrompt === true) {
-        upperPrompt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    } else {
-        upperPrompt = null;
-    }
-
-    if (numPrompt === true) {
-        numPrompt = '0123456789';
-    } else {
-        numPrompt = null;
-    }
-
-    if (specPrompt === true) {
-        specPrompt = '!@#$%^&*()';
-    } else {
-        specPrompt = null;
-    }
-
-    
 
     // password!!:
     password = generateString(length);
@@ -95,13 +74,52 @@ function generatePassword() {
 
 function findLength() {
     // this is the length prompt/popup
-    length = prompt("Enter the length of the password (between 8 and 128 characters):");
+    length = prompt('Enter the length of the password (between 8 and 128 characters):');
 }
 
 function findPrompts() {
     // these are the character type prompts/popups
-    lowerPrompt = confirm("Include lowercase letters?");
-    upperPrompt = confirm("Include uppercase letters?");
-    numPrompt = confirm("Include numbers?");
-    specPrompt = confirm("Include special characters?");
+    lowerPrompt = confirm('Include lowercase letters?');
+    // if () determines the variable settings
+    if (lowerPrompt === true) {
+        lowerPrompt = 'abcdefghijklmnopqrstuvwxyz';
+        ll = 'lowercase letters, ';
+    } else {
+        lowerPrompt = null;
+        ll = 'no lowercase letters, '
+    }
+
+    upperPrompt = confirm('Include uppercase letters?');
+    if (upperPrompt === true) {
+        upperPrompt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        upl = 'uppercase letters, '
+    } else {
+        upperPrompt = null;
+        upl = 'no uppercase letters, '
+    }
+
+    numPrompt = confirm('Include numbers?');
+    if (numPrompt === true) {
+        numPrompt = '0123456789';
+        nums = 'numbers, '
+    } else {
+        numPrompt = null;
+        nums = 'no numbers, '
+    }
+
+    specPrompt = confirm('Include special characters?');
+    if (specPrompt === true) {
+        specPrompt = '!@#$%^&*()';
+        spch = ' special characters.'
+    } else {
+        specPrompt = null;
+        spch = ' no special characters.'
+    }
+
+    confirm('Your password will include: ' + ll + upl + nums + 'and' + spch);
+
+    if (lowerPrompt && upperPrompt && numPrompt && specPrompt === null) {
+        confirm('Please enter at least one character type.')
+        return;
+    }
 }
