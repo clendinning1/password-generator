@@ -1,6 +1,19 @@
-// TO DO
-// 5. at each criteria prompt answer, the user input should be validated and at least one character type should be selected
-// 6. after all of the prompts are answered, generate a password that matches chosen criteria
+// some varries :3
+// pwd
+var password;
+// pwd length
+var length;
+// character types
+var lowerPrompt;
+var upperPrompt;
+var numPrompt;
+var specPrompt;
+
+// character types for validation message
+var ll;
+var upl;
+var nums;
+var spch;
 
 
 var generateBtn = document.querySelector('#generate');
@@ -8,8 +21,6 @@ var generateBtn = document.querySelector('#generate');
 generateBtn.addEventListener('click', writePassword);
 // adds onclick functionality to the button;
 // when clicked, the button runs the writePassword function
-
-var password
 
 function writePassword() {
     generatePassword();
@@ -22,26 +33,11 @@ function writePassword() {
     // password = generatePassword(), so it will print the value of generatePassword(), i think??
 }
 
-// some varries :3
-var length;
-var lowerPrompt;
-var upperPrompt;
-var numPrompt;
-var specPrompt;
-
-var ll;
-var upl;
-var nums;
-var spch;
 
 // function from Programiz
 function generateString(length) {
     // generates the password!
     const characters = lowerPrompt + upperPrompt + numPrompt + specPrompt;
-    //if (lowerPrompt && upperPrompt && numPrompt && specPrompt === null) {
-        //confirm('Please select at least one character type.');
-        //generatePassword();
-    //}
     let result = ' ';
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
