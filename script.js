@@ -38,16 +38,60 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-// when you click the "generate password" button, it opens the series of prompts
+
 
 
 // prompt 1: length. empty input box, enter length between 8-128.
+var lengthBox = document.getElementById("length");
+
+
+// if [number entered] === 8-128, then var pwdLength = [number entered]
+// else [feed error message]
+// if (lengthBox >= 8 || lengthBox <= 128) {
+//     var pwdLength = lengthBox;
+// } else {
+//    console.log("gimme a better number");
+// }
+
+
+
+
+// prompt function 
+// Prompt for password criteria
+// var length = prompt("Enter the length of the password (between 8 and 128 characters):");
+
+
+
 
 
 // prompt 2: checkboxes for character types: lowercase, uppercase, mumeric, and special
+var lowerBox = document.getElementById("lowercase");
+var upperBox = document.getElementById("uppercase");
+var numBox = document.getElementById("numeric");
+var specBox = document.getElementById("special");
+
+
+
+
 
 
 // generate password based off of inputs
 
+function generateString(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    let result = ' ';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+}
+
+// console.log(generateString(pwdLength));
 
 // display password
+
+// ok so we need the pieces that respond to you typing in info & checking boxes,
+// then we need the piece that actually generates the password based on what you
+// inputted.
