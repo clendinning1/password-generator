@@ -1,7 +1,6 @@
 // TO DO
 // 5. at each criteria prompt answer, the user input should be validated and at least one character type should be selected
 // 6. after all of the prompts are answered, generate a password that matches chosen criteria
-// 7. after the password generates, it either displays in an alert or written into the page
 
 
 var generateBtn = document.querySelector("#generate");
@@ -10,8 +9,10 @@ generateBtn.addEventListener("click", writePassword);
 // adds onclick functionality to the button;
 // when clicked, the button runs the writePassword function
 
+var password
+
 function writePassword() {
-    var password = generatePassword();
+    generatePassword();
     // runs the generatePassword funct
     var passwordText = document.querySelector("#password");
     // locates the text box in the html
@@ -32,6 +33,10 @@ var specPrompt
 function generateString(length) {
     // generates the password!
     const characters = lowerPrompt + upperPrompt + numPrompt + specPrompt;
+    //if (lowerPrompt && upperPrompt && numPrompt && specPrompt === null) {
+        //confirm("Please select at least one character type.");
+        //generatePassword();
+    //}
     let result = ' ';
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
@@ -44,17 +49,26 @@ function generateString(length) {
 function generatePassword() {
     // this function runs the prompts and figures out the parameters
 
-    // prompts:
+    // length prompt:
     findLength();
+
+    // determines settings for length & sends error msg at bad input:
+    if (length >= 8 && length <= 128) {
+    } else {
+        confirm("Please enter a valid number.");
+        return;
+    }
+
+    // character type
     findPrompts();
 
-    // prompt variable settings
+    // if () determines the variable settings
     if (lowerPrompt === true) {
         lowerPrompt = 'abcdefghijklmnopqrstuvwxyz';
     } else {
         lowerPrompt = null;
     }
-
+    
     if (upperPrompt === true) {
         upperPrompt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     } else {
@@ -73,18 +87,15 @@ function generatePassword() {
         specPrompt = null;
     }
 
+    
+
     // password!!:
-    console.log(generateString(length));
-    // figure out how to put it in da box
+    password = generateString(length);
 }
 
 function findLength() {
     // this is the length prompt/popup
     length = prompt("Enter the length of the password (between 8 and 128 characters):");
-    if (length >= 8 && length <= 128) {
-    } else {
-        generatePassword();
-    }
 }
 
 function findPrompts() {
