@@ -9,74 +9,38 @@
 // 7. after the password generates, it either displays in an alert or written into the page
 
 
-var generateBtn = document.querySelector("#generate");
-// gB var is the #generate id in the html
+// ok so we need the pieces that respond to you typing in info & checking boxes,
+// then we need the piece that actually generates the password based on what you
+// inputted.
 
-function generatePassword() {
-    var promptsList = document.getElementById("prompts");
-    promptsList.style.display='block';
-}
+
+var generateBtn = document.querySelector("#generate");
+// links the button variable to its html location
+generateBtn.addEventListener("click", writePassword);
+// adds onclick functionality to the button;
+// when clicked, the button runs the writePassword function
 
 function writePassword() {
-    // creates a funct called writePassword
     var password = generatePassword();
-    // "password" runs the generatePassword funct
+    // runs the generatePassword funct
     var passwordText = document.querySelector("#password");
-    // "passwordText" is the #password location in the html
+    // locates the text box in the html
 
     passwordText.value = password;
-    // (the pT variable's value is changed to the "password" variable)
-    // the pT variable calls the funct generatePassword at #password in the html
-    //      aka, prints something in the "your secure password" box
+    // prints the value of the "password" variable in the "your secure password" box
+    // password = generatePassword(), so it will print the value of generatePassword()
 
 }
 
-generateBtn.addEventListener("click", writePassword);
-// gB var will do something:
-// ("click" = when it's clicked)(wP = function that runs on the button click)
-
-
-
-
-
-
-
-// prompt 1: length. empty input box, enter length between 8-128.
-var lengthBox = document.getElementById("length");
-
-
-// if [number entered] === 8-128, then var pwdLength = [number entered]
-// else [feed error message]
-// if (lengthBox >= 8 || lengthBox <= 128) {
-//     var pwdLength = lengthBox;
-// } else {
-//    console.log("gimme a better number");
-// }
-
-
-
-
-// prompt function 
-// Prompt for password criteria
-// var length = prompt("Enter the length of the password (between 8 and 128 characters):");
-
-
-
-
-
-// prompt 2: checkboxes for character types: lowercase, uppercase, mumeric, and special
-var lowerBox = document.getElementById("lowercase");
-var upperBox = document.getElementById("uppercase");
-var numBox = document.getElementById("numeric");
-var specBox = document.getElementById("special");
-
-
-
-
-
+// some varries
+var length
+var lowerPrompt
+var upperPrompt
+var numPrompt
+var specPrompt
 
 // generate password based off of inputs
-
+// funct from Programiz
 function generateString(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
     let result = ' ';
@@ -88,10 +52,32 @@ function generateString(length) {
     return result;
 }
 
-// console.log(generateString(pwdLength));
+function generatePassword() {
+    // this is what runs the prompts and figures out the parameters
+    findLength();
+    findPrompts();
 
-// display password
+    if (upperPrompt === true) {
+        console.log("please, god");
+    }
 
-// ok so we need the pieces that respond to you typing in info & checking boxes,
-// then we need the piece that actually generates the password based on what you
-// inputted.
+    console.log(generateString(length));
+}
+
+function findLength() {
+    // this is the length popup
+    length = prompt("Enter the length of the password (between 8 and 128 characters):");
+    if (length >= 8 && length <= 128) {
+    } else {
+        generatePassword();
+    }
+}
+
+function findPrompts() {
+    // these are the character type popups
+    lowerPrompt = confirm("Include lowercase letters?");
+    upperPrompt = confirm("Include uppercase letters?");
+    numPrompt = confirm("Include numbers?");
+    specPrompt = confirm("Include special characters?");
+
+}
