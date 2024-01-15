@@ -18,7 +18,7 @@ function writePassword() {
 
     passwordText.value = password;
     // prints the value of the "password" variable in the "your secure password" box
-    // password = generatePassword(), so it will print the value of generatePassword()
+    // password = generatePassword(), so it will print the value of generatePassword(), i think??
 }
 
 // some varries :3
@@ -49,9 +49,9 @@ function generatePassword() {
     findLength();
     findPrompts();
 
-    // 
+    // how do i get these settings to apply to the characters above?
     if (lowerPrompt === true) {
-        console.log("please, god");
+        // const characters = lowercase string included
     } else {
         console.log("yippee!");
     }
