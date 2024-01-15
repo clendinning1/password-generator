@@ -29,19 +29,19 @@ function writePassword() {
     passwordText.value = password;
     // prints the value of the "password" variable in the "your secure password" box
     // password = generatePassword(), so it will print the value of generatePassword()
-
 }
 
-// some varries
+// some varries :3
 var length
 var lowerPrompt
 var upperPrompt
 var numPrompt
 var specPrompt
 
-// generate password based off of inputs
-// funct from Programiz
+
+// function from Programiz
 function generateString(length) {
+    // generates the password!
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
     let result = ' ';
     const charactersLength = characters.length;
@@ -65,7 +65,7 @@ function generatePassword() {
 }
 
 function findLength() {
-    // this is the length popup
+    // this is the length prompt/popup
     length = prompt("Enter the length of the password (between 8 and 128 characters):");
     if (length >= 8 && length <= 128) {
     } else {
@@ -74,10 +74,9 @@ function findLength() {
 }
 
 function findPrompts() {
-    // these are the character type popups
+    // these are the character type prompts/popups
     lowerPrompt = confirm("Include lowercase letters?");
     upperPrompt = confirm("Include uppercase letters?");
     numPrompt = confirm("Include numbers?");
     specPrompt = confirm("Include special characters?");
-
 }
