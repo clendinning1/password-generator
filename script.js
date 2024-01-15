@@ -1,3 +1,8 @@
+// TO DO
+// 1. fix no ch type bug
+// 2. deploy
+// 3. readme
+
 // some varries :3
 // pwd
 var password;
