@@ -28,11 +28,10 @@ var upperPrompt
 var numPrompt
 var specPrompt
 
-
 // function from Programiz
 function generateString(length) {
     // generates the password!
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    const characters = lowerPrompt + upperPrompt + numPrompt + specPrompt;
     let result = ' ';
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
@@ -49,11 +48,29 @@ function generatePassword() {
     findLength();
     findPrompts();
 
-    // how do i get these settings to apply to the characters above?
+    // prompt variable settings
     if (lowerPrompt === true) {
-        // const characters = lowercase string included
+        lowerPrompt = 'abcdefghijklmnopqrstuvwxyz';
     } else {
-        console.log("yippee!");
+        lowerPrompt = null;
+    }
+
+    if (upperPrompt === true) {
+        upperPrompt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    } else {
+        upperPrompt = null;
+    }
+
+    if (numPrompt === true) {
+        numPrompt = '0123456789';
+    } else {
+        numPrompt = null;
+    }
+
+    if (specPrompt === true) {
+        specPrompt = '!@#$%^&*()';
+    } else {
+        specPrompt = null;
     }
 
     // password!!:
