@@ -117,10 +117,10 @@ function findPrompts() {
         spch = ' no special characters.'
     }
 
-    confirm('Your password will include: ' + ll + upl + nums + 'and' + spch);
-
-    if (lowerPrompt && upperPrompt && numPrompt && specPrompt === null) {
+    if (lowerPrompt === null && upperPrompt === null && numPrompt === null && specPrompt === null) {
         confirm('Please enter at least one character type.')
         return;
+    } else {
+        confirm('Your password will include: ' + ll + upl + nums + 'and' + spch);
     }
 }
