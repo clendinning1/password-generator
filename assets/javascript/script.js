@@ -15,7 +15,6 @@ var upl;
 var nums;
 var spch;
 
-
 var generateBtn = document.querySelector('#generate');
 // links the button variable to its html location
 generateBtn.addEventListener('click', writePassword);
